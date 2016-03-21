@@ -1,0 +1,144 @@
+<div class="widewrapper main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 blog-main">
+                <article class="blog-post">
+                    <header>
+                        <h1><%=value.title%></h1>
+                        <div class="lead-image">
+                            <img src="/<%=ctx.caCode%>/cont/img/hands-big.png" alt="Hands" class="img-responsive">
+                            <div class="meta clearfix">
+
+                                <div class="author">
+                                    <i class="fa fa-user"></i>
+                                    <span class="data"><%=value.author%></span>
+                                </div>
+                                <div class="date">
+                                    <i class="fa fa-calendar"></i>
+                                    <span class="data"><%=value.date%></span>
+                                </div>
+                                <div class="comments">
+                                    <i class="fa fa-comments"></i>
+                                    <span class="data"><a href="#comments"><%= value.comments.length %> Comments</a></span>
+                                </div>                                
+                            </div>
+                        </div>
+                    </header>
+                    <div class="body">
+                        <%= value.body %>
+                    </div>
+                </article>
+
+                <aside class="social-icons clearfix">
+                    <a href="#" class="social-icon color-one">
+                        <div class="inner-circle" ></div>
+                        <i class="fa fa-twitter"></i>
+                    </a>
+
+                    <a href="#" class="social-icon color-two">
+                        <div class="inner-circle" ></div>
+                        <i class="fa fa-google-plus"></i>
+                    </a>    
+
+                    <a href="#" class="social-icon color-three">
+                        <div class="inner-circle" ></div>
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </aside>
+
+                <aside class="comments" id="comments">
+                    <hr>
+
+                    <h2><i class="fa fa-comments"></i> <%= value.comments.length %> Comments</h2>
+                    
+                    <%
+                    for (var i in value.comments)  {
+                        var  c = value.comments[i];
+                        wcomp('/Tales/blog/comment', c);
+                    }
+                    %>     
+                </aside>
+
+                <aside class="create-comment" id="create-comment">
+                    <hr>    
+
+                    <h2><i class="fa fa-heart"></i> Add Comment</h2>
+
+                    <form action="#" method="get" accept-charset="utf-8">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" name="name" id="comment-name" placeholder="Name" class="form-control input-lg">    
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" name="email" id="comment-email" placeholder="Email" class="form-control input-lg">    
+                            </div>
+                        </div>
+
+                        <input type="url" name="name" id="comment-url" placeholder="Website" class="form-control input-lg">
+
+                        <textarea rows="10" name="message" id="comment-body" placeholder="Your thoughts..." class="form-control input-lg"></textarea>
+
+                        <div class="buttons clearfix">
+                            <button class="btn btn-xlarge btn-tales-two">Cancel</button>
+                            <button type="submit" class="btn btn-xlarge btn-tales-one">Submit</button>
+                        </div>
+                    </form>
+                </aside>
+            </div>
+            
+            <aside class="col-md-4 blog-aside">
+                <%
+                    var  links = [
+                    
+                            {title: "Email Encryption Explained", href: '/index.html'},
+                            {title: "Selling is a Function of Design.", href: '#'},
+                            {title: "It’s Hard To Come Up With Dummy Titles", href: '#'},
+                            {title: "Why the Internet is Full of Cats", href: '#'},
+                            {title: "Last Made-Up Headline, I Swear!", href: '#'}
+                      
+                         ],
+                         params = {
+                            title: 'Read next...',
+                            links: links
+                         };
+   
+                    wcomp('/Tales/blog/asideWidget', params);
+                %>
+
+                <%
+                    var  links = [
+                    
+                            {title: "Email Encryption Explained", href: '/index.html'},
+                            {title: "Selling is a Function of Design.", href: '#'},
+                            {title: "It’s Hard To Come Up With Dummy Titles", href: '#'},
+                            {title: "Why the Internet is Full of Cats", href: '#'},
+                            {title: "Last Made-Up Headline, I Swear!", href: '#'}
+                      
+                         ],
+                         params = {
+                            title: 'Authors Favorites',
+                            links: links
+                         };
+   
+                    wcomp('/Tales/blog/asideWidget', params);
+                %>
+
+                <div class="aside-widget">
+                    <header>
+                        <h3>Tags</h3>
+                    </header>
+                    <div class="body clearfix">
+                        <ul class="tags">
+                        <%
+                        for (var i in value.tags)  {
+                            var  tag = value.tags[i];
+                        %>
+                            <li><a href="#"><%= tag %></a></li>
+                        <% } %>                        
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>

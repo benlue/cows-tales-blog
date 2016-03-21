@@ -1,0 +1,27 @@
+<%
+   var  avatar = _params.avatar,
+   		avatarAlt = _params.avatarAlt,
+   		nickName = _params.nickName,
+   		commentDate = _params.date,
+   		body = _params.body,
+   		isReply = _params.isReply;
+%>
+<article class="comment<%= isReply ? ' reply' : ''%>">
+    <header class="clearfix">
+        <img src="<%=avatar%>" alt="<%=avatarAlt%>" class="avatar">
+        <div class="meta">
+            <h3><a href="#"><%=nickName%></a></h3>
+            <span class="date">
+                <%=commentDate%>
+            </span>
+            <span class="separator">
+                -
+            </span>
+
+            <a href="#create-comment" class="reply-link">Reply</a>                
+        </div>
+    </header>
+    <div class="body">
+        <%=body%>
+    </div>
+</article>

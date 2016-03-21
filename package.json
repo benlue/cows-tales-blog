@@ -1,0 +1,28 @@
+{
+  "name": "csws-tales-blog",
+  "version": "0.1.0",
+  "description": "Blog in Tales theme by HackerThemes.com.",
+  "engines": "4.2.2",
+  "scripts": {
+    "start": "node startWeb.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benlue/csws-tales-blog.git"
+  },
+  "keywords": [
+    "Node.js",
+    "blog",
+    "coserv",
+    "tales",
+    "HackerThemes"
+  ],
+  "author": {
+    "name": "Ben Lue, Gocharm Inc."
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "coserv": "^0.10.5"
+  }
+}

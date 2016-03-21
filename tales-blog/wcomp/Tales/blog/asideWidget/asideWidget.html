@@ -1,0 +1,19 @@
+<%
+   var  title = _params.title,
+   		links = _params.links;
+%>
+<div class="aside-widget">
+    <header>
+        <h3><%=title%></h3>
+    </header>
+    <div class="body">
+        <ul class="tales-list">
+            <%
+            for (var i in links)  {
+               var  link = links[i];
+            %>
+            <li><a href="<%= link.href %>"><%= link.title %></a></li>
+            <% } %>
+        </ul>
+    </div>
+</div>

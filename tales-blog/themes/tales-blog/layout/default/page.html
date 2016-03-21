@@ -1,0 +1,40 @@
+<!DOCTYPE html">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <title><%=ctx.title%></title>
+        <meta name="description" content="<%=ctx.description%>" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <% includeCss(); %>
+        <!--[if lt IE 9]>      
+            <script src="/csws-blog/cont/js/lib/respond/html5-3.6-respond-1.1.0.min.js"></script>
+        <![endif]-->
+        <% includeJs(); %>
+
+        <style type="text/css">
+          <% css(); %>
+        </style>
+        <script type="text/javascript">
+      	<!--
+      	<% js(); %>
+      	$(document).ready(function() {
+          	$.ajaxSetup ({
+            		// Disable caching of AJAX responses
+            		cache: false
+          	});
+      	   __.initPage();
+      	});
+      	-->
+        </script>
+    </head>
+
+    <body>
+        <% block('pgHeader', '/header'); %>
+        <% block(); %>
+        <% block('/footer'); %>
+    </body>
+</html>

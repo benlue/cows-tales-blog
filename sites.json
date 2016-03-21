@@ -1,0 +1,15 @@
+{
+    "localhost": {
+        "caCode": "admin",
+        "title": "The coServ Design Console",
+        "sitePath": "./node_modules/coserv/www/admin",
+        "locale": "en"
+    },
+    "127.0.0.1": {
+        "caCode": "tales-blog",
+        "title": "Tales Blog",
+        "home": "/blog/home",
+        "locale": "en",
+        "sitePath": "./tales-blog"
+    }
+}

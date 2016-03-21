@@ -1,0 +1,21 @@
+{
+    "/header": {
+        "id": "no"
+    },
+    "/footer": {
+        "id": "no"
+    },
+    "/blog/detail": {
+        "id": "no"
+    },
+    "/blog/home": {
+        "id": "no"
+    },
+    "/blog/about": {
+        "id": "no"
+    },
+    "/blog/credits": {
+        "title": "Tales - Credits",
+        "id": "no"
+    }
+}
